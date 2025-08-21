@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Cookie Clicker</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="cookie.css">
+</head>
+<body>
+  <div class="bg"></div>
+  <header class="topbar">
+    <h1 id="title" data-i18n="title">Cookie Clicker</h1>
+    <div class="lang">
+      <label id="langLabel" data-i18n="language" for="langSelect">Language</label>
+      <select id="langSelect" aria-labelledby="langLabel">
+        <option value="en">English</option>
+        <option value="et">Eesti</option>
+        <option value="de">Deutsch</option>
+        <option value="es">Español</option>
+      </select>
+    </div>
+  </header>
+
+  <main class="layout">
+    <section class="left">
+      <div class="stats">
+        <div id="cookieCount" class="count">0</div>
+        <div id="cpsLabel" class="cps">CPS: 0</div>
+      </div>
+      <button id="cookieButton" class="cookie" aria-label="Cookie">
+        <svg class="cookie-svg" viewBox="0 0 512 512" width="100%" height="100%" aria-hidden="true">
+          <defs>
+            <radialGradient id="cookieGrad" cx="35%" cy="30%" r="75%">
+              <stop offset="0%" stop-color="#f6c28b"/>
+              <stop offset="60%" stop-color="#f1ae72"/>
+              <stop offset="100%" stop-color="#d4874a"/>
+            </radialGradient>
+          </defs>
+          <circle cx="256" cy="256" r="232" fill="url(#cookieGrad)" stroke="#5a371f" stroke-width="18"/>
+          <circle cx="150" cy="190" r="34" fill="#5b3a1f"/>
+          <circle cx="230" cy="130" r="38" fill="#5b3a1f"/>
+          <circle cx="360" cy="170" r="32" fill="#5b3a1f"/>
+          <circle cx="190" cy="330" r="36" fill="#5b3a1f"/>
+          <circle cx="310" cy="310" r="34" fill="#5b3a1f"/>
+          <circle cx="400" cy="270" r="30" fill="#5b3a1f"/>
+        </svg>
+      </button>
+      <div class="actions">
+        <button id="exportBtn" data-i18n="export">Export save</button>
+        <button id="importBtn" data-i18n="import">Import save</button>
+        <button id="resetBtn" data-i18n="reset">Reset</button>
+      </div>
+    </section>
+
+    <section class="right">
+      <h2 data-i18n="store">Store</h2>
+      <div id="storeList" class="store"></div>
+      <h2>Upgrades</h2>
+      <div id="upgradeList" class="store"></div>
+    </section>
+  </main>
+
+  <button id="goldenCookie" class="golden" aria-label="Golden Cookie" title="Golden Cookie">⭐</button>
+  <div id="cookieBorder" class="cookie-border" aria-hidden="true"></div>
+
+  <script src="cookie.js" defer></script>
+</body>
+</html>
